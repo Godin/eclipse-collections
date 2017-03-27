@@ -1,0 +1,3 @@
+http://openjdk.java.net/jeps/261
+http://mail.openjdk.java.net/pipermail/jigsaw-dev/2017-March/011763.html
+http://stackoverflow.com/questions/41265266/how-to-solve-inaccessibleobjectexception-unable-to-make-member-accessible-m/41265267
