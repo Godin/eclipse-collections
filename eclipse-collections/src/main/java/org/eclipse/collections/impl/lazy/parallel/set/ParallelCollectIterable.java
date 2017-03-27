@@ -98,20 +98,20 @@ public class ParallelCollectIterable<T, V> extends AbstractParallelIterableImpl<
     public <V1> UnsortedBagMultimap<V1, V> groupBy(Function<? super V, ? extends V1> function)
     {
         // TODO: Implement in parallel
-        return this.delegate.toBag().collect(this.function).groupBy(function);
+        return (UnsortedBagMultimap<V1, V>) this.delegate.toBag().collect(this.function).groupBy(function);
     }
 
     @Override
     public <V1> UnsortedBagMultimap<V1, V> groupByEach(Function<? super V, ? extends Iterable<V1>> function)
     {
         // TODO: Implement in parallel
-        return this.delegate.toBag().collect(this.function).groupByEach(function);
+        return (UnsortedBagMultimap<V1, V>) this.delegate.toBag().collect(this.function).groupByEach(function);
     }
 
     @Override
     public <V1> MapIterable<V1, V> groupByUniqueKey(Function<? super V, ? extends V1> function)
     {
         // TODO: Implement in parallel
-        return this.delegate.toBag().collect(this.function).groupByUniqueKey(function);
+        return (MapIterable<V1, V>) this.delegate.toBag().collect(this.function).groupByUniqueKey(function);
     }
 }

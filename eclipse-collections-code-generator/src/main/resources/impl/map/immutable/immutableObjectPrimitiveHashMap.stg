@@ -123,7 +123,7 @@ final class ImmutableObject<name>HashMap\<K> extends AbstractImmutableObject<nam
 
     public \<V> ImmutableCollection\<V> collect(<name>ToObjectFunction\<? extends V> function)
     {
-        return this.delegate.collect(function).toImmutable();
+        return (ImmutableCollection\<V>) this.delegate.collect(function).toImmutable();
     }
 
     <(arithmeticMethods.(type))()>

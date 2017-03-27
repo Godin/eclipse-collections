@@ -138,7 +138,7 @@ final class ImmutableArrayStack<T> implements ImmutableStack<T>, Serializable
 
     public static <T> ImmutableArrayStack<T> newStackFromTopToBottom(Iterable<? extends T> items)
     {
-        return new ImmutableArrayStack<T>(FastList.newList(items).reverseThis());
+        return new ImmutableArrayStack<T>((FastList<T>) FastList.newList(items).reverseThis());
     }
 
     public static <T> ImmutableArrayStack<T> newStackFromTopToBottom(T... items)
@@ -801,25 +801,25 @@ final class ImmutableArrayStack<T> implements ImmutableStack<T>, Serializable
     @Override
     public <V> ImmutableObjectLongMap<V> sumByInt(Function<? super T, ? extends V> groupBy, IntFunction<? super T> function)
     {
-        return this.delegate.asReversed().sumByInt(groupBy, function).toImmutable();
+        return (ImmutableObjectLongMap<V>) this.delegate.asReversed().sumByInt(groupBy, function).toImmutable();
     }
 
     @Override
     public <V> ImmutableObjectDoubleMap<V> sumByFloat(Function<? super T, ? extends V> groupBy, FloatFunction<? super T> function)
     {
-        return this.delegate.asReversed().sumByFloat(groupBy, function).toImmutable();
+        return (ImmutableObjectDoubleMap<V>) this.delegate.asReversed().sumByFloat(groupBy, function).toImmutable();
     }
 
     @Override
     public <V> ImmutableObjectLongMap<V> sumByLong(Function<? super T, ? extends V> groupBy, LongFunction<? super T> function)
     {
-        return this.delegate.asReversed().sumByLong(groupBy, function).toImmutable();
+        return (ImmutableObjectLongMap<V>) this.delegate.asReversed().sumByLong(groupBy, function).toImmutable();
     }
 
     @Override
     public <V> ImmutableObjectDoubleMap<V> sumByDouble(Function<? super T, ? extends V> groupBy, DoubleFunction<? super T> function)
     {
-        return this.delegate.asReversed().sumByDouble(groupBy, function).toImmutable();
+        return (ImmutableObjectDoubleMap<V>) this.delegate.asReversed().sumByDouble(groupBy, function).toImmutable();
     }
 
     @Override

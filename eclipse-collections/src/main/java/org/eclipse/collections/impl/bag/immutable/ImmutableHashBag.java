@@ -126,7 +126,7 @@ public class ImmutableHashBag<T>
     @Override
     public <V> ImmutableBagMultimap<V, T> groupBy(Function<? super T, ? extends V> function)
     {
-        return this.delegate.groupBy(function).toImmutable();
+        return (ImmutableBagMultimap<V, T>) this.delegate.groupBy(function).toImmutable();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class ImmutableHashBag<T>
     @Override
     public <V> ImmutableMap<V, T> groupByUniqueKey(Function<? super T, ? extends V> function)
     {
-        return this.delegate.groupByUniqueKey(function).toImmutable();
+        return (ImmutableMap<V, T>) this.delegate.groupByUniqueKey(function).toImmutable();
     }
 
     @Override
@@ -366,7 +366,7 @@ public class ImmutableHashBag<T>
     @Override
     public <V> ImmutableBag<V> collect(Function<? super T, ? extends V> function)
     {
-        return this.delegate.collect(function).toImmutable();
+        return (ImmutableBag<V>) this.delegate.collect(function).toImmutable();
     }
 
     @Override
@@ -380,7 +380,7 @@ public class ImmutableHashBag<T>
             Predicate<? super T> predicate,
             Function<? super T, ? extends V> function)
     {
-        return this.delegate.collectIf(predicate, function).toImmutable();
+        return (ImmutableBag<V>) this.delegate.collectIf(predicate, function).toImmutable();
     }
 
     @Override

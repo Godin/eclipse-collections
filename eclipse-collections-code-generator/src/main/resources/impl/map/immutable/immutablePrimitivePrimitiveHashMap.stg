@@ -219,7 +219,7 @@ final class Immutable<name1><name2>HashMap implements Immutable<name1><name2>Map
     @Override
     public \<V> ImmutableBag\<V> collect(<name2>ToObjectFunction\<? extends V> function)
     {
-        return this.delegate.collect(function).toImmutable();
+        return (ImmutableBag\<V>) this.delegate.collect(function).toImmutable();
     }
 
     @Override

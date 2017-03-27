@@ -210,7 +210,7 @@ public class UnifiedSetWithHashingStrategy<T>
 
     public static <K> UnifiedSetWithHashingStrategy<K> newSetWith(HashingStrategy<? super K> hashingStrategy, K... elements)
     {
-        return UnifiedSetWithHashingStrategy.newSet(hashingStrategy, elements.length).with(elements);
+        return (UnifiedSetWithHashingStrategy<K>) UnifiedSetWithHashingStrategy.newSet(hashingStrategy, elements.length).with(elements);
     }
 
     public HashingStrategy<? super T> hashingStrategy()

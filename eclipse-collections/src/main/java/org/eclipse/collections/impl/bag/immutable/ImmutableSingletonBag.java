@@ -135,7 +135,7 @@ final class ImmutableSingletonBag<T>
     @Override
     public ImmutableBag<T> newWithAll(Iterable<? extends T> elements)
     {
-        return HashBag.newBag(elements).with(this.value).toImmutable();
+        return ((HashBag<T>) HashBag.newBag(elements)).with(this.value).toImmutable();
     }
 
     @Override

@@ -236,7 +236,7 @@ final class ImmutableEmptyBag<T>
     @Override
     public ImmutableBag<T> newWithAll(Iterable<? extends T> elements)
     {
-        return HashBag.newBag(elements).toImmutable();
+        return (ImmutableBag<T>) HashBag.newBag(elements).toImmutable();
     }
 
     @Override

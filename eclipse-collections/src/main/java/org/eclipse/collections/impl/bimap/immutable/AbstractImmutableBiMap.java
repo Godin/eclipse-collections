@@ -388,25 +388,25 @@ public abstract class AbstractImmutableBiMap<K, V> extends AbstractBiMap<K, V> i
     @Override
     public <V1> ImmutableObjectLongMap<V1> sumByInt(Function<? super V, ? extends V1> groupBy, IntFunction<? super V> function)
     {
-        return this.delegate.sumByInt(groupBy, function).toImmutable();
+        return (ImmutableObjectLongMap<V1>) this.delegate.sumByInt(groupBy, function).toImmutable();
     }
 
     @Override
     public <V1> ImmutableObjectDoubleMap<V1> sumByFloat(Function<? super V, ? extends V1> groupBy, FloatFunction<? super V> function)
     {
-        return this.delegate.sumByFloat(groupBy, function).toImmutable();
+        return (ImmutableObjectDoubleMap<V1>) this.delegate.sumByFloat(groupBy, function).toImmutable();
     }
 
     @Override
     public <V1> ImmutableObjectLongMap<V1> sumByLong(Function<? super V, ? extends V1> groupBy, LongFunction<? super V> function)
     {
-        return this.delegate.sumByLong(groupBy, function).toImmutable();
+        return (ImmutableObjectLongMap<V1>) this.delegate.sumByLong(groupBy, function).toImmutable();
     }
 
     @Override
     public <V1> ImmutableObjectDoubleMap<V1> sumByDouble(Function<? super V, ? extends V1> groupBy, DoubleFunction<? super V> function)
     {
-        return this.delegate.sumByDouble(groupBy, function).toImmutable();
+        return (ImmutableObjectDoubleMap<V1>) this.delegate.sumByDouble(groupBy, function).toImmutable();
     }
 
     @Override
